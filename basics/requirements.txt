@@ -1,0 +1,9 @@
+pandas>=0.19
+numpy>=1.11
+bokeh>=0.12
+scikit-learn>=0.18
+scipy>=0.18
+matplotlib>=2
+Flask>=0.11
+jupyter>=1.0
+ipython>=5
