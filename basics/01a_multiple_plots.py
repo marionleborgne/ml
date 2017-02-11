@@ -38,5 +38,5 @@ plt.show()
 # - OK add text to the plot using the ax.text() method
 #   (doc here: http://matplotlib.org/users/text_intro.html)
 # - OK see if you can write "Boxes are cool" in the boxplot?
-# - OKadd vertical and horizontal lines with plt.axhline() and plt.axvline()
+# - OK add vertical and horizontal lines with plt.axhline() and plt.axvline()
 #   (doc here: http://matplotlib.org/examples/pylab_examples/axhspan_demo.html)
