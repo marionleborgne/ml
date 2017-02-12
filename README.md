@@ -1,11 +1,11 @@
 # Machine Learning @ DataWeekends
 
 ## Exercises
-[x] `01a_multiple_plots.py`
-[ ] `01b_plot_csv.py`
-[ ] `advanced`
-[x] `02_regression.py`
-[x] `03_classification.py`
+* [x] `01a_multiple_plots.py`
+* [ ] `01b_plot_csv.py`
+* [ ] `advanced`
+* [x] `02_regression.py`
+* [x] `03_classification.py`
 
 # Notes
 
