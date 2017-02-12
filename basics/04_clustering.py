@@ -2,7 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from sklearn.preprocessing import LabelEncoder
 from sklearn.cluster import KMeans
-
+import random as rd
 
 # load the data
 df = pd.read_csv('data/iris.csv')
@@ -11,6 +11,9 @@ df = pd.read_csv('data/iris.csv')
 le = LabelEncoder()
 target_n = le.fit_transform(df.target)
 
+# Uncomment this to show that normalization of the data is important
+# df[['sepal_length_cm']] *= 100
+# df[['petal_length_cm']] *= 100
 
 # initialize feature matrix
 X = df[['sepal_length_cm',
@@ -20,30 +23,32 @@ X = df[['sepal_length_cm',
 
 
 # look for 3 clusters
-km = KMeans(3)
-km.fit(X)
-centers = km.cluster_centers_
-print centers
+for num_clusters in range(3, 4):
+  km = KMeans(num_clusters)
+  km.fit(X)
+  centers = km.cluster_centers_
+  print centers
+  
+  # plot the data and the clusters using 2 features
+  plt.figure(figsize=(10, 6))
+  
+  # plot 1: color with real labels
+  plt.subplot(121)
+  plt.scatter(df.sepal_length_cm, df.petal_length_cm, c=target_n)
+  plt.xlabel('Sepal Length (cm)')
+  plt.ylabel('Petal length (cm)')
+  plt.title('True Labels')
+  
+  # plot 2: color with found clusters (colors may differ)
+  plt.subplot(122)
+  plt.scatter(df.sepal_length_cm, df.petal_length_cm, c=km.labels_)
+  plt.scatter(centers[:, 0], centers[:, 2], marker='o', c='r', s=100)  # centroid
+  plt.xlabel('Sepal Length (cm)')
+  plt.ylabel('Petal length (cm)')
+  plt.title('K-Means (%s clusters)' % num_clusters)
+  plt.draw()
+  
 
-# plot the data and the clusters using 2 features
-plt.figure(figsize=(10, 6))
-
-
-# plot 1: color with real labels
-plt.subplot(121)
-plt.scatter(df.sepal_length_cm, df.petal_length_cm, c=target_n)
-plt.xlabel('Sepal Length (cm)')
-plt.ylabel('Petal length (cm)')
-plt.title('True Labels')
-
-# plot 2: color with found clusters (colors may differ)
-plt.subplot(122)
-plt.scatter(df.sepal_length_cm, df.petal_length_cm, c=km.labels_)
-plt.scatter(centers[:, 0], centers[:, 2], marker='o', c='r', s=100)  # centroid
-plt.xlabel('Sepal Length (cm)')
-plt.ylabel('Petal length (cm)')
-plt.title('K-Means Clusters')
-plt.draw()
 plt.show()
 
 

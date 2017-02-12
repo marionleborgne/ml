@@ -105,18 +105,29 @@ fig = plt.figure(figsize=(6, 6))
 num_features = len(features)
 b0 = regr.intercept_
 b = [regr.coef_[k] for k in range(num_features)]
+
 means = [df[f].mean() for f in features]
 for i in range(num_features):
   ax = fig.add_subplot(3, 1, i + 1)
   ax.scatter(X_test[:, i], y_test)
   # To project onto one dimension, freeze the 2 other dims. Use the mean of 
   # their feature column to freeze them.
-  if i == 0:
-    projections = b0 + b[0] * X_test[:, 0] + b[1] * means[1] + b[2] * means[2]
-  elif i == 1:
-    projections = b0 + b[0] * means[0] + b[1] * X_test[:, 1] + b[2] * means[2]
-  else:
-    projections = b0 + b[0] * means[0] + b[1] * means[1] + b[2] * X_test[:, 2]
+  for j in range(num_features):
+     if j!= i:
+       b += b[j] * means[j]
+  projections = b + b[i]*X_test[:, i]
+  
+  # if i == 0:
+  #   projections = b0 + b[0] * X_test[:, 0] + b[1] * means[1] + b[2] * means[2]
+  # elif i == 1:
+  #   projections = b0 + b[0] * means[0] + b[1] * X_test[:, 1] + b[2] * means[2]
+  # else:
+  #   projections = b0 + b[0] * means[0] + b[1] * means[1] + b[2] * X_test[:, 2]
+  # X0 = df.values
+  # for j in range(num_features):
+  #   if j!= i:
+  #     X0[:, j] = means[j]
+  # projections = regr.predict(X0)
   ax.plot(X_test[:, i], projections, color='red')
   ax.set_title('Housing data')
   ax.set_xlabel(features[i])
