@@ -10,7 +10,6 @@ from keras.models import Sequential
 from keras.layers.core import Dense, Dropout
 from keras.utils import np_utils
 from keras.regularizers import l2
-import matplotlib.pyplot as plt
 
 
 

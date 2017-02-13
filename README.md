@@ -10,11 +10,11 @@
 # Notes
 
 ### `01b_plot_csv.py`
-** pd.groupby to plot categories
+* See usage of `pd.groupby()` to plot categories.
 
 ###`02_regression.py`
-* `a[:, np.newaxis]`` is like `[[h] for h in a]`` 
-* Residual sum of squares
+* Tip to add a dimension: `a[:, np.newaxis]`` is like `[[h] for h in a]`` 
+* Check out residual sum of squares in the demo script.
 * Plot best fit line in N dimensions by projecting the regression 
 hyperplane on each feature axis.
 * Remember, don't shuffle the data if the data is temporal. If it's not, 
@@ -54,6 +54,11 @@ optimizer.
 #### `05_data_preprocessing.py`
 * Data normalization. Look at `MinMaxScaler` and `StandardScaler` (mean of 0
  and standard deviation of 1). Examples [here](http://machinelearningmastery.com/prepare-data-machine-learning-python-scikit-learn/)
+* `pd.get_dummies()` will convert a DF column from categories to binary
+ 
+ 
+ #### `06_accuracy.py`
+ * Interactive [scikit-learn cheat sheet](http://scikit-learn.org/stable/tutorial/machine_learning_map/)
  
 
 

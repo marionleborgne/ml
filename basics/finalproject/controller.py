@@ -25,7 +25,30 @@ with gzip.open('ml/my_model.dill.gz') as fin:
     model, target_names = dill.load(fin)
 print "Model loaded in memory. Ready to roll!"
 
-
+def convert_to_text(prediction):
+  if prediction == 'ar':
+    return 'Arabic'
+  elif prediction == 'de':
+    return 'German'
+  elif prediction == 'en':
+    return 'English'
+  elif prediction == 'es':
+    return 'Spanish'
+  elif prediction == 'fr':
+    return 'French'
+  elif prediction == 'it':
+    return 'Italian'
+  elif prediction == 'nl':
+    return 'Dutch'
+  elif prediction == 'pl':
+    return 'Polish'
+  elif prediction == 'pt':
+    return 'Portuguese'
+  elif prediction == 'ru':
+    return 'Russian'
+  else:
+    return '?'
+  
 @app.route('/', methods=['GET', 'POST'])
 def translate():
     prediction, sentence = None, None
@@ -41,10 +64,11 @@ def translate():
         sentence = submitted_data['sentence']
 
         # Predict the class corresponding to the sentence
-        predicted_class_n = model.predict([sentence])
+        predicted_class_n = model.predict([sentence])[0]
 
         # Get the corresponding class name and make it pretty
-        prediction = target_names[predicted_class_n].capitalize()
+        prediction = target_names[predicted_class_n]
+        prediction = convert_to_text(prediction)
 
     # Pass the predicted class name to the fron-end
     return render_template('model.html',
