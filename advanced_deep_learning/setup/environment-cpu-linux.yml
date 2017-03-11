@@ -1,0 +1,18 @@
+name: dwdlacpu
+channels: !!python/tuple
+- !!python/unicode
+  'defaults'
+- 'conda-forge'
+dependencies:
+- python=2.7
+- numpy>=1.12
+- jupyter>=1.0
+- h5py>=2.6
+- matplotlib>=2.0
+- scikit-learn>=0.18
+- pandas>=0.19
+- scipy>=0.18
+- pip:
+  - tensorflow>=1.0
+  - keras>=1.2.2
+  - floyd-cli>=0.7.5

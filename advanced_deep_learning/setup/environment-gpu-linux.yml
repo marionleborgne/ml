@@ -1,0 +1,24 @@
+name: dwdlagpu
+channels: !!python/tuple
+- !!python/unicode
+  'defaults'
+- 'conda-forge'
+dependencies:
+- python=2.7
+- numpy>=1.12
+- jupyter>=1.0
+- h5py>=2.6
+- matplotlib>=2.0
+- scikit-learn>=0.18
+- pandas>=0.19
+- scipy>=0.18
+- flask=0.11.1
+- opencv=2.4.10
+- pil=1.1.7
+- itsdangerous=0.24
+- gunicorn=19.1.0
+- jinja2=2.8
+- pip:
+  - tensorflow>=1.0
+  - keras>=1.2.2
+  - floyd-cli>=0.7.5
