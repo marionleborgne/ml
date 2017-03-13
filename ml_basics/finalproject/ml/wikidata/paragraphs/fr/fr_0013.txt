@@ -1,0 +1,1 @@
+En janvier 2013, d'autres logiciels offrent cette possibilité de lecture de Wikipédia en mode hors connexion, mais aucun ne permet d'accéder aux illustrations des articles, contrairement à Kiwix ; leur base de données est donc bien moins lourde. Certains offrent en outre la possibilité d'être utilisables sur des plateformes non prises en charge par Kiwix, comme iOS[11].

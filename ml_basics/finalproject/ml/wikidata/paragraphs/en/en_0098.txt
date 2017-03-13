@@ -1,0 +1,1 @@
+Wikipedia currently runs on dedicated clusters of Linux servers (mainly Ubuntu).[245][246] As of December 2009, there were 300 in Florida and 44 in Amsterdam.[247] By January 22, 2013, Wikipedia had migrated its primary data center to an Equinix facility in Ashburn, Virginia.[248][249]

@@ -1,0 +1,1 @@
+Le projet Afripédia utilise ce logiciel. Il s'est donné pour mission de mettre en place des ordinateurs Plug équipés de bornes Wi-Fi et d'une copie locale de Wikipédia dans certains campus universitaires d'Afrique dont la liaison internet dispose d'un débit insuffisant pour permettre de consulter Wikipédia en ligne.
